@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_19_193840) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_19_213329) do
   create_table "jelly_cats", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -22,4 +22,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_19_193840) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.string "reviewer_name"
+    t.string "review_text"
+    t.integer "jelly_cat_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jelly_cat_id"], name: "index_ratings_on_jelly_cat_id"
+  end
+
+  add_foreign_key "ratings", "jelly_cats"
 end

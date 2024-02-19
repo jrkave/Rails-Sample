@@ -6,6 +6,8 @@
     <p>Limited Edition: <%= @jelly_cat.limited_edition %></p>
     <p>Year: <%= @jelly_cat.year %></p>
 
-<%= link_to "Edit", edit_jelly_cat_path(@jelly_cat) %>
+<div><%= link_to "Rate #{@jelly_cat.name}", new_jelly_cat_rating_path(@jelly_cat) %></div>
+<div><%= link_to "Edit", edit_jelly_cat_path(@jelly_cat) %></div>
 <%= button_to "Delete", jelly_cat_path(@jelly_cat), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to "All JellyCats", jelly_cats_path %>
+<div><%= link_to "Ratings", jelly_cat_ratings_path(@jelly_cat) %></div>
+<div><%= link_to "All JellyCats", jelly_cats_path %></div>

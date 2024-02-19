@@ -7,6 +7,7 @@
         <p>Size: <%= jelly_cat.description %></p>
         <p>Limited Edition: <%= jelly_cat.limited_edition %></p>
         <p>Year: <%= jelly_cat.year %></p>
+        <p><%= link_to 'Ratings', jelly_cat_ratings_path(jelly_cat) %></p>
     </div>
 <% end %>
 <%= link_to "New JellyCat", new_jelly_cat_path %>

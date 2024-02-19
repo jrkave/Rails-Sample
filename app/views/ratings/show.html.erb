@@ -1,0 +1,30 @@
+<div>
+<p>
+  <strong>Rating:</strong>
+  <%= @rating.rating %>
+</p>
+</div>
+
+<div>
+<p>
+  <strong>Reviewer Name:</strong>
+  <%= @rating.reviewer_name %>
+</p>
+</div>
+
+<div>
+<p>
+  <strong>Review Text:</strong>
+  <%= @rating.review_text %>
+</p>
+</div> 
+
+<div>
+<p>
+  <strong>JellyCat:</strong>
+  <%= @rating.jelly_cat.name %>
+</p>
+</div> 
+
+<%= link_to 'Edit', edit_jelly_cat_rating_path(@rating.jelly_cat, @rating) %> |
+<%= link_to 'Back', jelly_cat_ratings_path(@rating.jelly_cat) %>

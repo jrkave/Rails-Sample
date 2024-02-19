@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Route sfor JellyCats Controller
-  resources :jelly_cats
-
+  resources :jelly_cats do
+    resources :ratings
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end

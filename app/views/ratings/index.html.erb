@@ -1,0 +1,24 @@
+<h1>All Ratings for <%= @jelly_cat.name %></h1>
+
+<div class="ratings">
+  <% @ratings.each do |rating| %>
+    <div class="rating">
+      <p><strong>Rating:</strong> <%= rating.rating %></p>
+      <p><strong>Reviewer Name:</strong> <%= rating.reviewer_name %></p>
+      <p><strong>Review Text:</strong> <%= rating.review_text %></p>
+      <p><strong>JellyCat:</strong> <%= rating.jelly_cat.name %></p>
+      <div class="actions">
+        <%= link_to 'Show', jelly_cat_rating_path(rating.jelly_cat, rating), class: "action" %>
+        <%= link_to 'Edit', edit_jelly_cat_rating_path(rating.jelly_cat, rating), class: "action" %>
+        <%= button_to 'Destroy', jelly_cat_rating_path(rating.jelly_cat, rating), method: :delete, data: { confirm: 'Are you sure?' }, class: "action" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+<div class="new-rating-link">
+  <%= link_to 'New Rating', new_jelly_cat_rating_path(@jelly_cat) %>
+</div>
+<%= link_to 'All JellyCats', jelly_cats_path %>
