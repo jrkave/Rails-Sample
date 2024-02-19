@@ -1,0 +1,11 @@
+<h1>JellyCat Details</h1>
+<h2><%= @jelly_cat.name %></h2>
+    <p>Description: <%= @jelly_cat.description %></p>
+    <p>Color: <%= @jelly_cat.color %></p>
+    <p>Size: <%= @jelly_cat.size %></p>
+    <p>Limited Edition: <%= @jelly_cat.limited_edition %></p>
+    <p>Year: <%= @jelly_cat.year %></p>
+
+<%= link_to "Edit", edit_jelly_cat_path(@jelly_cat) %>
+<%= button_to "Delete", jelly_cat_path(@jelly_cat), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "All JellyCats", jelly_cats_path %>

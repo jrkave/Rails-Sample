@@ -1,0 +1,13 @@
+<h1>All JellyCats</h1>
+<% @jelly_cats.each do |jelly_cat| %>
+    <div>
+        <h2><%= link_to jelly_cat.name, jelly_cat_path(jelly_cat.id) %></h2>
+        <p>Description: <%= jelly_cat.description %></p>
+        <p>Color: <%= jelly_cat.color %></p>
+        <p>Size: <%= jelly_cat.description %></p>
+        <p>Limited Edition: <%= jelly_cat.limited_edition %></p>
+        <p>Year: <%= jelly_cat.year %></p>
+    </div>
+<% end %>
+<%= link_to "New JellyCat", new_jelly_cat_path %>
+

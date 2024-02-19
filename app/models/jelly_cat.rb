@@ -1,0 +1,2 @@
+class JellyCat < ApplicationRecord
+end

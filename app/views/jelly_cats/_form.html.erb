@@ -1,0 +1,47 @@
+<%= form_with(model: jelly_cat, local: true) do |form| %>
+    <% if jelly_cat.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(jelly_cat.errors.count, "error") %> prohibited this JellyCat from being saved:</h2>
+        <ul>
+          <% jelly_cat.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, required: true %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, required: true %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :color %>
+      <%= form.text_field :color, required: true %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :size %>
+      <%= form.text_field :size, required: true %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :limited_edition %>
+      <%= form.check_box :limited_edition %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :year %>
+      <%= form.number_field :year, required: true %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
