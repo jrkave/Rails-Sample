@@ -1,4 +1,5 @@
 class JellyCatsController < ApplicationController
+    skip_before_action :require_login, only: [:show, :index] # skip require_login for show and index actions
     before_action :set_jelly_cat, only: [:show, :edit, :update, :destroy]
 
     def index

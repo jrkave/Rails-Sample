@@ -1,2 +1,17 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<h1>Login</h1>
+<%= form_with url: login_path, local: true do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit 'Log in' %>
+  </div>
+
+  <p><%= link_to 'Sign Up', new_user_path  %></p>
+  <p><%= link_to 'Back to JellyCats', jelly_cats_path %></p>
+<% end %>
